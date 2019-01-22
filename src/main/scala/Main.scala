@@ -62,6 +62,7 @@ class Producer(drop : Pipe)
   {
     Console.println(s"PRODUCER: ${Thread.currentThread()}")
     storage.foreach((msg) => {
+      Thread.sleep(5000)
       Console.println(s"SENT - $msg")
       drop.put(msg)
     })
